@@ -88,8 +88,9 @@ public class BurgerTest {
         burger.addIngredient(dataBase.availableIngredients().get(0));
         String ingredient = dataBase.availableIngredients().get(0).getName();
 
-        assertTrue("В рецепте указаны некорректные данные",burger.getReceipt().contains("Краторная булка N-200i")&&burger.getReceipt().contains(ingredient));
-
+        assertTrue("В рецепте указаны некорректные данные",burger.getReceipt()
+                .contains("Краторная булка N-200i") && burger.getReceipt()
+                .contains(ingredient));
     }
 
 }

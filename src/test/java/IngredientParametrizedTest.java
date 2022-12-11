@@ -5,6 +5,7 @@ import praktikum.Ingredient;
 import praktikum.IngredientType;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.runners.Parameterized.*;
 
 @RunWith(Parameterized.class)
 public class IngredientParametrizedTest {
@@ -19,10 +20,9 @@ public class IngredientParametrizedTest {
         this.price = price;
     }
 
-    @Parameterized.Parameters
+    @Parameters
     public static Object[][] getTestData() {
         return new Object[][] {
-
                 {IngredientType.SAUCE, "hot sauce", 100},
                 {IngredientType.SAUCE, "sour cream", 200},
                 {IngredientType.SAUCE, "chili sauce", 300},
@@ -37,7 +37,7 @@ public class IngredientParametrizedTest {
     public void getPriceIngredientTest(){
         Ingredient ingredient = new Ingredient(type, name, price);
         float actualPrice = ingredient.getPrice();
-        assertEquals("Некорректная стоимость ингредиента",price, actualPrice, 0);
+        assertEquals("Некорректная стоимость ингредиента", price, actualPrice, 0);
     }
 
     @Test
